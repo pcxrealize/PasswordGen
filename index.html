@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Password Generator</h1>
+
+        <div class="generator">
+            <label for="length">Password Length: <span id="length-val">12</span></label>
+            <input type="range" id="length" min="4" max="64" value="12">
+
+            <div class="options">
+                <label><input type="checkbox" id="uppercase" checked> Include Uppercase</label>
+                <label><input type="checkbox" id="numbers" checked> Include Numbers</label>
+                <label><input type="checkbox" id="symbols" checked> Include Symbols</label>
+                <label><input type="checkbox" id="exclude-ambiguous"> Exclude Ambiguous (O0Il1)</label>
+            </div>
+
+            <button id="generate">Generate Password</button>
+            
+            <div class="output">
+                <input type="text" id="password" readonly placeholder="Your password will appear here">
+                <button id="copy">📋</button>
+            </div>
+
+            <div id="strength-container">
+                <div id="strength-bar"></div>
+                <span id="strength-text">Strength: </span>
+            </div>
+
+            <div id="entropy-info">
+                <p><strong>Entropy:</strong> <span id="entropy">0</span> bits</p>
+                <p><strong>Estimated crack time:</strong> <span id="crack-time">Instant</span></p>
+            </div>
+
+            <button id="toggle-theme">Toggle Dark/Light Mode</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
