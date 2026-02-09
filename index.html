@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black & Red Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Password Generator</h1>
 
+    <!-- Mode Toggle -->
+    <label><input type="checkbox" id="passphrase-mode"> Use Passphrase Mode</label>
+
+    <!-- Word count for passphrase -->
+    <div id="word-count-container" style="display:none;">
+      <label for="word-count">Number of words: <span id="word-count-val">4</span></label>
+      <input type="range" id="word-count" min="2" max="8" value="4">
+    </div>
+
+    <!-- Password length slider for normal password -->
+    <label for="length">Password Length: <span id="length-val">12</span></label>
+    <input type="range" id="length" min="4" max="64" value="12">
+
+    <!-- Options -->
+    <div class="options">
+      <label><input type="checkbox" id="uppercase" checked> Include Uppercase</label>
+      <label><input type="checkbox" id="numbers" checked> Include Numbers</label>
+      <label><input type="checkbox" id="symbols" checked> Include Symbols</label>
+      <label><input type="checkbox" id="exclude-ambiguous"> Exclude Ambiguous (O0l1I)</label>
+    </div>
+
+    <button id="generate">Generate Password</button>
+
+    <!-- Output -->
+    <div class="output">
+      <input type="text" id="password" readonly placeholder="Your password will appear here">
+      <button id="copy">📋</button>
+    </div>
+
+    <!-- Strength & entropy -->
+    <div id="strength-container">
+      <div id="strength-bar"></div>
+      <span id="strength-text">Strength: </span>
+    </div>
+
+    <div id="entropy-info">
+      <p><strong>Entropy:</strong> <span id="entropy">0</span> bits</p>
+      <p><strong>Estimated crack time:</strong> <span id="crack-time">Instant</span></p>
+    </div>
+
+    <!-- Optional toggle theme -->
+    <button id="toggle-theme">Toggle Dark/Light Mode</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
